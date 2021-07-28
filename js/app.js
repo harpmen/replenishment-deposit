@@ -42,7 +42,10 @@ function handleSubmit(evt) {
 }
 
 const formEl = document.getElementById('deposit-form');
-formEl.onsubmit = handleSubmit;
+//formEl.onsubmit = handleSubmit;
+formEl.addEventListener('submit', handleSubmit);
+formEl.addEventListener('submit', handleSubmit, true);
+formEl.addEventListener('submit', handleSubmit, {capture:true});
 
 const depositAmountInputEl = document.getElementById( 'amount-input');
 const periodInputEl = document.getElementById('period-input');
