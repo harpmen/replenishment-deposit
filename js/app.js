@@ -14,7 +14,7 @@ function calculateTotalProfit(depositAmount, period) {
     else if (period <= 18) {
         percentEl = 2.6
     }
-    const profit = depositAmount * percentEl / 100 * (period / 12);
+    const profit = depositAmount * ((1 + percentEl * period / 12 / 100) ** (period * 3 / 12)) - depositAmount;
     const totalProfit = depositAmount + profit;
 
     return {
